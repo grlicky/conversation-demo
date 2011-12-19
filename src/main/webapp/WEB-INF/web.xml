@@ -1,0 +1,31 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Conversation Demo Web Application</display-name>
+
+  <filter>
+    <filter-name>conversation-aware-filter</filter-name>
+    <filter-class>com.grlicky.demo.conversation.ConversationAwareFilter</filter-class>
+  </filter>
+
+  <filter-mapping>
+    <filter-name>conversation-aware-filter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+  <servlet>
+    <servlet-name>demo-servlet</servlet-name>
+    <servlet-class>com.grlicky.demo.conversation.DemoServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>demo-servlet</servlet-name>
+    <url-pattern>/servlet/*</url-pattern>
+  </servlet-mapping>
+
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
